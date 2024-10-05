@@ -7,7 +7,7 @@ import com.example.weather.models.Location
 import com.example.weather.network.API
 import retrofit2.Response
 
-class weatherrepo2(private val api: API):weatherrepo {
+class WeatherRepo2(private val api: API):WeatherRepo {
     override suspend fun searchLocation(query: String): BaseModel<List<Location>> {
         return request {
             api.searchLocation(query = query)

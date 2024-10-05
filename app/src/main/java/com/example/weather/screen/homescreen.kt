@@ -37,7 +37,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -48,7 +51,7 @@ import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalAnimationApi::class)
 @Composable
-fun homescreen(
+fun HomeScreen(
     navController: NavController, viewModel: HomeViewModel = viewModel()
 ) {
     val locations by viewModel.locations.collectAsState()
@@ -70,7 +73,26 @@ fun homescreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Welcome to weather app.",
+            text= buildAnnotatedString {
+                withStyle(
+                    style = SpanStyle(
+                        color = Color.Green,
+                        fontSize = 25.sp
+                    )
+                ){
+                    append("W")
+                }
+                append("elcome to ")
+                withStyle(
+                    style = SpanStyle(
+                        color = Color.Green,
+                        fontSize = 25.sp
+                    )
+                ){
+                    append("W")
+                }
+                append("eather App")
+            },
             color = Color.White,
             fontSize = 25.sp,
             fontWeight = FontWeight.Bold
@@ -117,9 +139,9 @@ fun homescreen(
                             items(data.data) { location ->
                                 Row(modifier = Modifier
                                     .fillMaxWidth()
-                                    .height(50.dp)
+                                    .height(150.dp)
                                     .clip(
-                                        RoundedCornerShape(8.dp)
+                                        RoundedCornerShape(18.dp)
                                     )
                                     .background(MaterialTheme.colorScheme.secondary)
                                     .clickable {
@@ -136,7 +158,7 @@ fun homescreen(
                                         )
                                         Text(
                                             location.country.englishName,
-                                            color = Color.Gray,
+                                            color = Color.White,
                                             fontSize = 12.sp
                                         )
                                     }
@@ -154,7 +176,7 @@ fun homescreen(
             enter = fadeIn() + scaleIn(),
             exit = fadeOut() + scaleOut()
         ) {
-            CircularProgressIndicator(color = Color.White)
+            CircularProgressIndicator(color = Color.Yellow)
         }
     }
 }

@@ -18,7 +18,7 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.KeyboardArrowLeft
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.sharp.ArrowDownward
 import androidx.compose.material.icons.sharp.ArrowUpward
 import androidx.compose.material3.CircularProgressIndicator
@@ -43,6 +43,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.weather.models.BaseModel
+import com.example.weather.ui.theme.russoFont
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -66,7 +67,7 @@ fun WeatherScreen(
     Column(modifier = Modifier.padding(horizontal = 16.dp)) {
         Row(modifier = Modifier.padding(vertical = 32.dp)) {
             Icon(
-                imageVector = Icons.Default.KeyboardArrowLeft,
+                imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
                 modifier = Modifier
                     .size(30.dp)
                     .clickable {
@@ -95,6 +96,7 @@ fun WeatherScreen(
                     fontWeight = FontWeight.Bold,
                     fontSize = 80.sp,
                     color = Color.White,
+                    fontFamily = russoFont
                 )
             }
         }

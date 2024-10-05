@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.weather.models.BaseModel
 import com.example.weather.models.DailyForecasts
 import com.example.weather.models.HourlyForecast
-import com.example.weather.repo.weatherrepo
+import com.example.weather.repo.WeatherRepo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -14,7 +14,7 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 class WeatherViewModel:ViewModel(),KoinComponent {
-    private val repo:weatherrepo by inject()
+    private val repo:WeatherRepo by inject()
 
     private val _hourlyForecast:MutableStateFlow<BaseModel<List<HourlyForecast>>> = MutableStateFlow(BaseModel.Loading)
     val hourlyForecast = _hourlyForecast.asStateFlow()

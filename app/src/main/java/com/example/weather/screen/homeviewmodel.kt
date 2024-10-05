@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weather.models.BaseModel
 import com.example.weather.models.Location
-import com.example.weather.repo.weatherrepo
+import com.example.weather.repo.WeatherRepo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -13,7 +13,7 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 class HomeViewModel:ViewModel(),KoinComponent {
-    val repo:weatherrepo by inject()
+    private val repo:WeatherRepo by inject()
 
     private val _locations:MutableStateFlow<BaseModel<List<Location>>?> = MutableStateFlow(null)
     val locations = _locations.asStateFlow()

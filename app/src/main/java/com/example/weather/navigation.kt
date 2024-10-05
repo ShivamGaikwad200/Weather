@@ -7,14 +7,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.weather.screen.WeatherScreen
-import com.example.weather.screen.homescreen
+import com.example.weather.screen.HomeScreen
 
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "home") {
         composable("home") {
-            homescreen(navController = navController)
+            HomeScreen(navController = navController)
         }
         composable("weather/{location_key}/{name}/{country}", arguments = listOf(
             navArgument("location_key") {

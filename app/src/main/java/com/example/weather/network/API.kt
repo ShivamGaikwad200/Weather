@@ -8,15 +8,14 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-const val APIKEY = "8lQbZLgO7xPiEQzNSubK4sjLRFLDIPEC\n"
+const val APIKEY = "8lQbZLgO7xPiEQzNSubK4sjLRFLDIPEC"
 
 interface API {
-
         @GET("locations/v1/cities/search")
-    suspend fun searchLocation(
-        @Query("apikey") apiKey: String = APIKEY,
-        @Query("q") query: String
-    ): Response<List<Location>>
+        suspend fun searchLocation(
+            @Query("apikey") apiKey: String = APIKEY,
+            @Query("q") query: String
+        ): Response<List<Location>>
 
     @GET("forecasts/v1/daily/5day/{location_key}")
     suspend fun getDailyForecasts(
