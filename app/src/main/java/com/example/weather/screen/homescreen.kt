@@ -77,24 +77,42 @@ fun HomeScreen(
                 withStyle(
                     style = SpanStyle(
                         color = Color.Green,
-                        fontSize = 25.sp
+                        fontSize = 20.sp
                     )
                 ){
                     append("W")
                 }
-                append("elcome to ")
+                append("elcome ")
                 withStyle(
                     style = SpanStyle(
                         color = Color.Green,
-                        fontSize = 25.sp
+                        fontSize = 20.sp
+                    )
+                ){
+                    append("t")
+                }
+                append("o ")
+                withStyle(
+                    style = SpanStyle(
+                        color = Color.Green,
+                        fontSize = 20.sp
                     )
                 ){
                     append("W")
                 }
-                append("eather App")
+                append("eather ")
+                withStyle(
+                    style = SpanStyle(
+                        color = Color.Green,
+                        fontSize = 20.sp
+                    )
+                ){
+                    append("A")
+                }
+                append("pp")
             },
             color = Color.White,
-            fontSize = 25.sp,
+            fontSize = 20.sp,
             fontWeight = FontWeight.Bold
         )
         Spacer(modifier = Modifier.height(16.dp))

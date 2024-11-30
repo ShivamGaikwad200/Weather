@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.sp
 import com.example.weather.R
 
 val ubuntuFont = FontFamily(listOf(
-    Font(R.font.ubuntu)
+    Font(R.font.gotham_rounded_bold)
 ))
 val russoFont = FontFamily(listOf(
     Font(R.font.russo_one)
